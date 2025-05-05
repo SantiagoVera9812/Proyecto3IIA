@@ -1,0 +1,37 @@
+[Variable]
+Nombre: Temperatura
+Rango: 0, 100
+Unidades: °C
+
+Nombre: Fria
+Tipo: trapezoidal
+Puntos: 0, 0, 10, 20
+
+Nombre: Templada
+Tipo: triangular
+Puntos: 15, 25, 35
+
+Nombre: Caliente
+Tipo: trapezoidal
+Puntos: 30, 40, 100, 100
+
+[Variable]
+Nombre: Velocidad_Ventilador
+Rango: 0, 5000
+Unidades: RPM
+
+Nombre: Apagado
+Tipo: triangular
+Puntos: 0, 0, 1000
+
+Nombre: Baja
+Tipo: triangular
+Puntos: 500, 1500, 2500
+
+Nombre: Media
+Tipo: triangular
+Puntos: 2000, 3000, 4000
+
+Nombre: Alta
+Tipo: triangular
+Puntos: 3500, 5000, 5000
