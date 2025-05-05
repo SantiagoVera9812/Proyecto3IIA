@@ -4,6 +4,7 @@
 #include <string>
 #include "ConjuntoDifuso.h"
 #include "Variable.h"
+#include "ValorReal.h"
 
 std::vector<Variable> procesarArchivo(const std::string& nombreArchivo);
 
@@ -11,11 +12,17 @@ int main() {
 
     try {
         std::vector<Variable> variables = procesarArchivo("descripcion-variables.txt");
+
+        ValorReal valorReal("Temperatura", 18.0, variables);
+        ValorReal valorReal2("Velocidad_Ventilador", 1800, variables);
         
         for (auto& var : variables) {
             var.imprimir();
             std::cout << "-------------------------\n";
         }
+
+        valorReal.imprimir();
+        valorReal2.imprimir();
     }
     catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

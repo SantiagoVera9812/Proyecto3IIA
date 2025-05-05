@@ -64,6 +64,10 @@ std::string Variable::obtenerNombre() const{
     return nombre;
 };
 
+std::vector<ConjuntoDifuso> Variable::obtenerConjuntosDifusos() const{
+    return conjuntosDifusos;
+}
+
 void Variable::establecerNombre(const std::string& nuevoNombre) {
     nombre = nuevoNombre;
 }

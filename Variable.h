@@ -31,6 +31,7 @@ class Variable {
     void imprimir() const;
 
     std::string obtenerNombre() const;
+    std::vector<ConjuntoDifuso> obtenerConjuntosDifusos() const;
 
     void establecerNombre(const std::string& nuevoNombre);
     void establecerUnidad(const std::string& nuevaUnidad);
