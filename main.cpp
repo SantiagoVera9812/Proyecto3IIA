@@ -1,35 +1,110 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include "ConjuntoDifuso.h"
 #include "Variable.h"
 
-using namespace std;
+std::vector<Variable> procesarArchivo(const std::string& nombreArchivo);
 
 int main() {
-    string nombreArchivo;
-    string linea;
 
-    
-    //lectura del archivo txt
-    ifstream archivo("descripcion-variables.txt");
-
-    if (!archivo.is_open()) {
-        cerr << "Error al abrir el archivo: " << nombreArchivo << endl;
+    try {
+        std::vector<Variable> variables = procesarArchivo("descripcion-variables.txt");
+        
+        for (auto& var : variables) {
+            var.imprimir();
+            std::cout << "-------------------------\n";
+        }
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
 
-    //Procesar variables y logica fuzzy
+    return 0;
+}
+
+
+//Procesar archivo y crear lista de variables
+std::vector<Variable> procesarArchivo(const std::string& nombreArchivo) {
+    std::ifstream archivo(nombreArchivo);
+    std::vector<Variable> variables;
+    
+    if (!archivo.is_open()) {
+        throw std::runtime_error("Error al abrir el archivo: " + nombreArchivo);
+    }
+
+    Variable* variableActual = nullptr;
+    std::string linea;
+
     while (getline(archivo, linea)) {
-        cout << linea << endl;
-        ConjuntoDifuso conjuntoDifuso = ConjuntoDifuso("hola", TipoDifuso::TRIANGULAR, std::vector<double> {1,2,3});
-        ConjuntoDifuso conjuntoDifuso2 = ConjuntoDifuso("holaTrapezoide", TipoDifuso::TRAPEZOIDAL, std::vector<double> {1,2,3,4});
-        Variable variable = Variable("Range", 10,40, "Km", std::vector<ConjuntoDifuso> {conjuntoDifuso, conjuntoDifuso2});
-        variable.imprimir();
-        
+        // Eliminar espacios en blanco al inicio y final
+        linea.erase(0, linea.find_first_not_of(" \t"));
+        linea.erase(linea.find_last_not_of(" \t") + 1);
+
+        if (linea.empty()) continue;
+
+        if (linea == "[Variable]") {
+            // Nueva variable, 
+            if (variableActual) {
+                variables.push_back(*variableActual);
+                delete variableActual;
+            }
+            variableActual = new Variable();
+        }
+        else if (linea.find("Nombre: ") == 0 && variableActual) {
+            std::string nombre = linea.substr(8);
+            if (variableActual->obtenerNombre().empty()) {
+                // Es el nombre de la variable
+                variableActual->establecerNombre(nombre);
+            }
+            else {
+                // Es el nombre de un conjunto difuso
+                TipoDifuso tipo;
+                std::vector<double> puntos;
+                std::string tipoStr;
+
+                // Leer tipo
+                getline(archivo, linea);
+                tipoStr = linea.substr(6); // "Tipo: "
+                tipo = (tipoStr == "triangular") ? TipoDifuso::TRIANGULAR : TipoDifuso::TRAPEZOIDAL;
+
+                // Leer puntos
+                getline(archivo, linea);
+                std::string puntosStr = linea.substr(8); // "Puntos: "
+                std::stringstream ss(puntosStr);
+                std::string token;
+                while (getline(ss, token, ',')) {
+                    puntos.push_back(stod(token));
+                }
+
+                // Crear y agregar el conjunto difuso
+                ConjuntoDifuso conjunto(nombre, tipo, puntos);
+                variableActual->insertarConjuntoDifuso(conjunto);
+            }
+        }
+        else if (linea.find("Rango: ") == 0 && variableActual) {
+            std::string rangoStr = linea.substr(7);
+            std::stringstream ss(rangoStr);
+            std::string token;
+            std::vector<int> rango;
+            while (getline(ss, token, ',')) {
+                rango.push_back(stoi(token));
+            }
+            variableActual->establecerRango({rango[0], rango[1]});
+        }
+        else if (linea.find("Unidades: ") == 0 && variableActual) {
+            variableActual->establecerUnidad(linea.substr(10));
+        }
+    }
+
+    // Agregar la última variable procesada
+    if (variableActual) {
+        variables.push_back(*variableActual);
+        delete variableActual;
     }
 
     archivo.close();
-
-    return 0;
+    return variables;
 }

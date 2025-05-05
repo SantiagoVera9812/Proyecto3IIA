@@ -1,4 +1,5 @@
 #include <string>
+#include <climits> 
 #include "ConjuntoDifuso.h"
 #pragma once
 
@@ -10,23 +11,29 @@ struct Range {
 
 // Variable struct using Range
 class Variable {
+    
     std::string nombre;
     Range rango;
     std::string unidad;
     std::vector<ConjuntoDifuso> conjuntosDifusos;
     
+    
     public:
 
+    
     Variable(const std::string& nombre = "", 
         int minimo = 0, 
-        int maximo = 0, 
+        int maximo = INT_MAX,
         const std::string& unidad = "",
         const std::vector<ConjuntoDifuso>& conjuntos = {});
+        void insertarConjuntoDifuso(const ConjuntoDifuso& conjunto);
 
     void imprimir() const;
 
-        
+    std::string obtenerNombre() const;
 
+    void establecerNombre(const std::string& nuevoNombre);
+    void establecerUnidad(const std::string& nuevaUnidad);
+    void establecerRango(const Range& nuevoRango);
 
-    
 };

@@ -55,3 +55,7 @@ void ConjuntoDifuso::imprimir() const {
     std::cout << "]\n";
 }
 
+std::string ConjuntoDifuso::obtenerNombre() const{
+
+    return nombre;
+}

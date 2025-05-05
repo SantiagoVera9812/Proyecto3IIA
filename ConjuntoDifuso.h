@@ -27,6 +27,8 @@ class ConjuntoDifuso {
     //Imprimir
     void imprimir() const;
 
+    std::string obtenerNombre() const;
+
     std::vector<double> obtenerPuntos() const;
       
 
