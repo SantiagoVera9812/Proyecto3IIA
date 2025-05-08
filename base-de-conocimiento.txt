@@ -1,0 +1,5 @@
+PA     PM     PB       NB       NM
+PA     PM     ZR       NM       NM
+PM     PB     ZR       NB       NM
+PM     PB     NB       NM       NA
+PB     PB     NM       NA       NA 

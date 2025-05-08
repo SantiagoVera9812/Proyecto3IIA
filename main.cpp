@@ -5,24 +5,32 @@
 #include "ConjuntoDifuso.h"
 #include "Variable.h"
 #include "ValorReal.h"
+#include "SistemaDifuso.h"
 
 std::vector<Variable> procesarArchivo(const std::string& nombreArchivo);
 
 int main() {
 
     try {
+
+        SistemaDifuso sistema;
         std::vector<Variable> variables = procesarArchivo("descripcion-variables.txt");
 
-        ValorReal valorReal("Temperatura", 18.0, variables);
-        ValorReal valorReal2("Velocidad_Ventilador", 1800, variables);
-        
         for (auto& var : variables) {
-            var.imprimir();
-            std::cout << "-------------------------\n";
+            sistema.agregarVariable(var);
         }
 
-        valorReal.imprimir();
-        valorReal2.imprimir();
+        sistema.cargarReglasDesdeArchivo("base-de-conocimiento.txt");
+
+        sistema.imprimirMatrizReglas();
+    
+        // Evaluar un caso de la vida real
+        double temp = 2; // °C
+        double pres = 4.5;  // bar
+        std::string salida = sistema.inferir(temp, pres, false);
+    
+        std::cout << "Para Temperatura = " << temp << "°C y Presión = " << pres << " bar, la salida es: " << salida << std::endl;
+
     }
     catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

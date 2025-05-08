@@ -3,35 +3,47 @@ Nombre: Temperatura
 Rango: 0, 100
 Unidades: °C
 
-Nombre: Fria
+Nombre: Frío
 Tipo: trapezoidal
 Puntos: 0, 0, 10, 20
 
-Nombre: Templada
+Nombre: Fresco
 Tipo: triangular
 Puntos: 15, 25, 35
 
+Nombre: Normal
+Tipo: triangular
+Puntos: 30, 40, 50
+
+Nombre: Tibio
+Tipo: triangular
+Puntos: 45, 55, 65
+
 Nombre: Caliente
 Tipo: trapezoidal
-Puntos: 30, 40, 100, 100
+Puntos: 60, 70, 100, 100
 
 [Variable]
-Nombre: Velocidad_Ventilador
-Rango: 0, 5000
-Unidades: RPM
+Nombre: Presion
+Rango: 0, 10
+Unidades: Pa
 
-Nombre: Apagado
+Nombre: Débil
 Tipo: triangular
-Puntos: 0, 0, 1000
+Puntos: 0, 0, 2
 
 Nombre: Baja
 Tipo: triangular
-Puntos: 500, 1500, 2500
+Puntos: 1, 3, 5
 
-Nombre: Media
+Nombre: Normal
 Tipo: triangular
-Puntos: 2000, 3000, 4000
+Puntos: 4, 6, 8
+
+Nombre: Fuerte
+Tipo: triangular
+Puntos: 7, 6, 9
 
 Nombre: Alta
 Tipo: triangular
-Puntos: 3500, 5000, 5000
+Puntos: 9, 10, 10
