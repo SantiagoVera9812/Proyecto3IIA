@@ -1,0 +1,3 @@
+/home/santiagovera/Proyecto3IIA/build/CMakeFiles/entrada.dir
+/home/santiagovera/Proyecto3IIA/build/CMakeFiles/edit_cache.dir
+/home/santiagovera/Proyecto3IIA/build/CMakeFiles/rebuild_cache.dir

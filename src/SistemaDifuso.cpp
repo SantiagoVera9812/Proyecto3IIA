@@ -60,6 +60,8 @@ std::string SistemaDifuso::inferir(double valorVar1, double valorVar2, bool meto
             activacionesSalida[salida] = std::max(activacionesSalida[salida], activacion);
             }
         }
+
+    imprimirPertenencias(activacionesSalida, "Activacion de salida" );
     
     if(metodoAND){
     // Paso 3: Elegir la salida con mayor activación (método máximo AND)

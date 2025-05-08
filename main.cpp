@@ -25,8 +25,8 @@ int main() {
         sistema.imprimirMatrizReglas();
     
         // Evaluar un caso de la vida real
-        double temp = 2; // °C
-        double pres = 4.5;  // bar
+        double temp = 18; // °C
+        double pres = 2;  // bar
         std::string salida = sistema.inferir(temp, pres, false);
     
         std::cout << "Para Temperatura = " << temp << "°C y Presión = " << pres << " bar, la salida es: " << salida << std::endl;

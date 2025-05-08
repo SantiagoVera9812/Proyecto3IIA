@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o CMakeFiles/entrada.dir/src/Variable.cpp.o CMakeFiles/entrada.dir/src/ValorReal.cpp.o CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o CMakeFiles/entrada.dir/main.cpp.o -o entrada 
