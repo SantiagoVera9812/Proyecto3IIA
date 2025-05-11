@@ -6,29 +6,30 @@
 #include "Variable.h"
 #include "ValorReal.h"
 #include "SistemaDifuso.h"
-
+// Procesar archivo de entrada y crear lista de variables
 std::vector<Variable> procesarArchivo(const std::string& nombreArchivo);
 
 int main() {
 
     try {
-
+        // Crear sistema difuso
         SistemaDifuso sistema;
+           // Procesar archivo de definición de variables
         std::vector<Variable> variables = procesarArchivo("descripcion-variables.txt");
-
-        for (auto& var : variables) {
+      // Añadir variables al sistema
+         for (auto& var : variables) {
             sistema.agregarVariable(var);
         }
-
+        // Cargar reglas desde base de conocimiento
         sistema.cargarReglasDesdeArchivo("base-de-conocimiento.txt");
-
+// Imprimir matriz de reglas para verificación
         sistema.imprimirMatrizReglas();
     
         // Evaluar un caso de la vida real
         double temp = 18; // °C
         double pres = 2;  // bar
         std::string salida = sistema.inferir(temp, pres, false);
-    
+    // Imprimir resultado de inferencia
         std::cout << "Para Temperatura = " << temp << "°C y Presión = " << pres << " bar, la salida es: " << salida << std::endl;
 
     }
