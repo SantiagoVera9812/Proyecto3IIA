@@ -11,12 +11,11 @@ enum class TipoDifuso {
 };
 
 class ConjuntoDifuso {
-    std::string nombre;// Nombre del conjunto difuso
+    std::string nombre; // Nombre del conjunto difuso
     TipoDifuso tipo;  // Tipo de conjunto
-
- // Unión para almacenar puntos según el tipo
+    // Unión para almacenar puntos según el tipo
     union {
-        std::array<double, 3> puntosTriangular;// 3 puntos para triangular
+        std::array<double, 3> puntosTriangular; // 3 puntos para triangular
         std::array<double, 4> puntosTrapezoidal;// 4 puntos para trapezoidal
     };
     
@@ -30,8 +29,8 @@ class ConjuntoDifuso {
 
     // Obtener nombre del conjunto
     std::string obtenerNombre() const;
+  
     // Obtener puntos de definición
     std::vector<double> obtenerPuntos() const;
       
-
 };
