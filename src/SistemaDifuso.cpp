@@ -54,9 +54,12 @@ std::string SistemaDifuso::inferir(double valorVar1, double valorVar2, bool meto
             // Paso 2: Evaluar reglas activas y agregar conclusiones
     std::map<std::string, double> activacionesSalida;
     for (const auto& [key, salida] : matrizReglas) {
+        //Coseguir la combinacion de parejas de ambos conjuntos difusos
                 auto [conjVar1, conjVar2] = key;
         if (pertenenciasVar1.count(conjVar1) && pertenenciasVar2.count(conjVar2)) {
+            //Activacion de reglas  (una regla se activa sólo hasta donde su antecedente más restrictivo lo permite)
             double activacion = std::min(pertenenciasVar1[conjVar1], pertenenciasVar2[conjVar2]);
+            //combinar reglas: si varias reglas contribuyen a la misma salida, nos quedamos con la contribución más fuerte
             activacionesSalida[salida] = std::max(activacionesSalida[salida], activacion);
             }
         }
