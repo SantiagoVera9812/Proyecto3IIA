@@ -7,7 +7,7 @@
 //enum para los dos tipos de conjuntos difusos
 enum class TipoDifuso {
     TRIANGULAR,  // Conjunto triangular
-    TRAPEZOIDAL   // Conjunto trapezoidal  
+    TRAPEZOIDAL  // Conjunto trapezoidal
 };
 
 class ConjuntoDifuso {
@@ -29,8 +29,8 @@ class ConjuntoDifuso {
 
     // Obtener nombre del conjunto
     std::string obtenerNombre() const;
- // Obtener puntos de definición
+  
+    // Obtener puntos de definición
     std::vector<double> obtenerPuntos() const;
       
-
 };
