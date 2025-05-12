@@ -59,3 +59,49 @@ std::string ConjuntoDifuso::obtenerNombre() const{
 
     return nombre;
 }
+
+double ConjuntoDifuso::calcularCentroide() const {
+    const int steps = 100; // Número de pasos para la integración numérica
+    double numerador = 0.0;
+    double denominador = 0.0;
+    
+    // Determinar los límites de integración
+    double min = 0.0, max = 0.0;
+    std::vector<double> puntos = obtenerPuntos();
+    
+    if (tipo == TipoDifuso::TRIANGULAR) {
+        min = puntos[0];
+        max = puntos[2];
+    } else { // TRAPEZOIDAL
+        min = puntos[0];
+        max = puntos[3];
+    }
+    
+    // Integración numérica
+    double step_size = (max - min) / steps;
+    for (int i = 0; i <= steps; ++i) {
+        double x = min + i * step_size;
+        double mu = calcularGradoPertenencia(x);
+        
+        numerador += x * mu;
+        denominador += mu;
+    }
+    
+    // Evitar división por cero
+    if (denominador < 1e-10) return (min + max) / 2.0;
+    
+    return numerador / denominador;
+}
+
+ConjuntoDifuso ConjuntoDifuso::recortar(double valor) const{
+    ConjuntoDifuso resultado(*this); // Copia del conjunto original
+        resultado.activacion = std::min(activacion, valor);
+        return resultado;
+}
+
+void ConjuntoDifuso::setNombre(const std::string& newNombre) {
+    if (newNombre.empty()) {
+        throw std::invalid_argument("El nombre del conjunto difuso no puede estar vacío");
+    }
+    this->nombre = newNombre;
+}

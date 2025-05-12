@@ -20,6 +20,8 @@ set(SOURCES
 file(COPY 
     ${CMAKE_SOURCE_DIR}/descripcion-variables.txt
     ${CMAKE_SOURCE_DIR}/base-de-conocimiento.txt
+    ${CMAKE_SOURCE_DIR}/descripcion.txt
+    ${CMAKE_SOURCE_DIR}/baseCorta.txt
     DESTINATION ${CMAKE_BINARY_DIR}
 )
 

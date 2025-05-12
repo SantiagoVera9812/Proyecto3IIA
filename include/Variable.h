@@ -36,5 +36,6 @@ class Variable {
     void establecerNombre(const std::string& nuevoNombre);
     void establecerUnidad(const std::string& nuevaUnidad);
     void establecerRango(const Range& nuevoRango);
+    ConjuntoDifuso& obtenerConjuntoPorNombre(const std::string& nombreConjunto);
 
 };

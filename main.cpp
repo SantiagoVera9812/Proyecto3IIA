@@ -26,11 +26,32 @@ int main() {
         sistema.imprimirMatrizReglas();
     
         // Evaluar un caso de la vida real
-        double temp = 18; // °C
-        double pres = 2;  // bar
-        std::string salida = sistema.inferir(temp, pres, false);
-    // Imprimir resultado de inferencia
-        std::cout << "Para Temperatura = " << temp << "°C y Presión = " << pres << " bar, la salida es: " << salida << std::endl;
+        double temp = 62; // °C
+        double pres = 4.5;  // bar
+        auto [salida, conjuntos] = sistema.inferirConExplicacion(temp,pres);
+        auto obtener = sistema.ultimoIntentoDess(temp, pres);
+        auto activacionesSalida = sistema.inferirActivaciones(temp, pres);
+std::cout << "Salida: " << salida 
+          << " generada por los conjuntos: "
+          << conjuntos.first << " y " 
+          << conjuntos.second << std::endl;
+
+          auto resultado = sistema.inferirConExplicacionCompleta(temp, pres);
+
+            std::cout << "Salida lingüística: " << resultado.salidaLinguistica << "\n"
+          << "Conjunto Variable 1: " << resultado.conjuntoVar1 
+          << " (Pertenencia: " << resultado.pertenenciaVar1 << ")\n"
+          << "Conjunto Variable 2: " << resultado.conjuntoVar2 
+          << " (Pertenencia: " << resultado.pertenenciaVar2 << ")\n"
+          << "Activación final: " << resultado.activacionFinal << std::endl;
+
+          double salidaDefusificada = sistema.defusificarPorCentroide(resultado);
+            std::cout << "Salida defusificada (centroide): " << salidaDefusificada << std::endl;
+
+        double respuesta = sistema.desfuzzificar(activacionesSalida);
+
+        std::cout << "Salida defusificada (centroide) otro metodo: " << respuesta << std::endl;
+       
 
     }
     catch (const std::exception& e) {

@@ -21,16 +21,24 @@ class ConjuntoDifuso {
     
     public: 
     // Constructor 
-    ConjuntoDifuso(const std::string& name, TipoDifuso type, const std::vector<double>& points);
+    ConjuntoDifuso(const std::string& name = "", TipoDifuso type = TipoDifuso::TRIANGULAR, const std::vector<double>& points = {0,0,0});
     //Calcular el grado de pertenencia de la variable 
     double calcularGradoPertenencia(double x) const;
     //Imprimir
     void imprimir() const;
 
+    double activacion = 0;
+
     // Obtener nombre del conjunto
     std::string obtenerNombre() const;
+
+    void setNombre(const std::string& newNombre);
   
     // Obtener puntos de definición
     std::vector<double> obtenerPuntos() const;
+
+    ConjuntoDifuso recortar(double valor) const; 
+
+    double calcularCentroide() const;
       
 };

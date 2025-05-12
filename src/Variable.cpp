@@ -1,6 +1,7 @@
 #include <stdexcept>
 #include <iostream>
 #include "Variable.h"
+#include <algorithm>
 
 //insertar un ConjuntoDisuso con sus validaciones
 void Variable::insertarConjuntoDifuso(const ConjuntoDifuso& conjunto){
@@ -78,4 +79,17 @@ void Variable::establecerUnidad(const std::string& nuevaUnidad){
 
 void Variable::establecerRango(const Range& nuevoRango){
     rango = nuevoRango;
+}
+
+ConjuntoDifuso& Variable::obtenerConjuntoPorNombre(const std::string& nombreConjunto) {
+    auto it = std::find_if(conjuntosDifusos.begin(), conjuntosDifusos.end(),
+        [&nombreConjunto](const ConjuntoDifuso& conjunto) {
+            return conjunto.obtenerNombre() == nombreConjunto;
+        });
+
+    if (it == conjuntosDifusos.end()) {
+        throw std::runtime_error("Conjunto '" + nombreConjunto + "' no encontrado en variable '" + nombre + "'");
+    }
+    
+    return *it;
 }

@@ -1,0 +1,33 @@
+[Variable]
+Nombre: Temperatura
+Rango: 0, 100
+Unidades: °C
+
+Nombre: Frío
+Tipo: trapezoidal
+Puntos: 0, 0, 10, 20
+
+Nombre: Fresco
+Tipo: triangular
+Puntos: 15, 25, 35
+
+Nombre: Normal
+Tipo: triangular
+Puntos: 30, 40, 50
+
+[Variable]
+Nombre: Presion
+Rango: 0, 10
+Unidades: Pa
+
+Nombre: Débil
+Tipo: triangular
+Puntos: 0, 0, 2
+
+Nombre: Baja
+Tipo: triangular
+Puntos: 1, 3, 5
+
+Nombre: Normal
+Tipo: triangular
+Puntos: 4, 6, 8
