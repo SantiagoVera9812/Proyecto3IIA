@@ -3,10 +3,9 @@
 #include "Variable.h"
 #include <algorithm>
 
-//insertar un ConjuntoDisuso con sus validaciones
-void Variable::insertarConjuntoDifuso(const ConjuntoDifuso& conjunto){
-
-    //Verificar que el conjunto insertado este dentro del rango
+// Método para insertar un conjunto difuso con validaciones
+void Variable::insertarConjuntoDifuso(const ConjuntoDifuso& conjunto) {
+    // Verificar que los puntos del conjunto estén dentro del rango de la variable
     auto puntos = conjunto.obtenerPuntos();
     for (double punto : puntos) {
         if (punto < rango.minimo || punto > rango.maximo) {
@@ -14,82 +13,93 @@ void Variable::insertarConjuntoDifuso(const ConjuntoDifuso& conjunto){
         }
     }
     
-    //Verificar por duplicados
+    // Verificar que no exista ya un conjunto con el mismo nombre
     for (const auto& c : conjuntosDifusos) {
         if (c.obtenerNombre() == conjunto.obtenerNombre()) {
             throw std::invalid_argument("Ya existe un conjunto difuso con ese nombre");
         }
     }
-    //Insertar conjuntos
+    
+    // Si pasa las validaciones, insertar el conjunto
     conjuntosDifusos.push_back(conjunto);
-
 }
 
+// Constructor de la clase Variable
 Variable::Variable(const std::string& nombre, 
-    int minimo, 
-    int maximo, 
-    const std::string& unidad,
-    const std::vector<ConjuntoDifuso>& conjuntos)
-: nombre(nombre), 
-rango{minimo, maximo}, 
-unidad(unidad)
+                 int minimo, 
+                 int maximo, 
+                 const std::string& unidad,
+                 const std::vector<ConjuntoDifuso>& conjuntos)
+    : nombre(nombre), 
+      rango{minimo, maximo}, 
+      unidad(unidad) 
 {
-//Validaciones
-if (minimo >= maximo) {
-    printf("Para variable (%s) Rango invalido - minimo (%d) - maximo (%d)\n", nombre.c_str(), minimo, maximo);
-throw std::invalid_argument("El mínimo debe ser menor que el máximo");
+    // Validación del rango
+    if (minimo >= maximo) {
+        printf("Para variable (%s) Rango invalido - minimo (%d) - maximo (%d)\n", 
+              nombre.c_str(), minimo, maximo);
+        throw std::invalid_argument("El mínimo debe ser menor que el máximo");
+    }
+
+    // Insertar cada conjunto con sus validaciones
+    for (const auto& conjunto : conjuntos) {
+        insertarConjuntoDifuso(conjunto);
+    }
 }
 
-//Realizar la validacion para insertar un conjunto
-for (const auto& conjunto : conjuntos) {
-    insertarConjuntoDifuso(conjunto);
-}
-
-}
-
-//Funcion para imprimir
+// Método para imprimir los detalles de la variable
 void Variable::imprimir() const {
     std::cout << "Variable: " << nombre << "\n";
     std::cout << "Rango: [" << rango.minimo << ", " << rango.maximo << "]\n";
     std::cout << "Unidad: " << unidad << "\n";
     std::cout << "Conjuntos difusos (" << conjuntosDifusos.size() << "):\n";
     
+    // Imprimir cada conjunto difuso asociado
     for (const auto& conjunto : conjuntosDifusos) {
         std::cout << "  - ";
-        
         conjunto.imprimir(); 
     }
 }
 
-std::string Variable::obtenerNombre() const{
+// Getter para el nombre de la variable
+std::string Variable::obtenerNombre() const {
     return nombre;
-};
+}
 
-std::vector<ConjuntoDifuso> Variable::obtenerConjuntosDifusos() const{
+// Getter para los conjuntos difusos
+std::vector<ConjuntoDifuso> Variable::obtenerConjuntosDifusos() const {
     return conjuntosDifusos;
 }
 
+// Setter para el nombre de la variable
 void Variable::establecerNombre(const std::string& nuevoNombre) {
     nombre = nuevoNombre;
 }
 
-void Variable::establecerUnidad(const std::string& nuevaUnidad){
+// Setter para la unidad de medida
+void Variable::establecerUnidad(const std::string& nuevaUnidad) {
     unidad = nuevaUnidad;
 }
 
-void Variable::establecerRango(const Range& nuevoRango){
+// Setter para el rango de valores
+void Variable::establecerRango(const Range& nuevoRango) {
     rango = nuevoRango;
 }
 
+// Método para obtener un conjunto difuso por su nombre
 ConjuntoDifuso& Variable::obtenerConjuntoPorNombre(const std::string& nombreConjunto) {
+    // Buscar el conjunto usando algoritmo STL
     auto it = std::find_if(conjuntosDifusos.begin(), conjuntosDifusos.end(),
         [&nombreConjunto](const ConjuntoDifuso& conjunto) {
             return conjunto.obtenerNombre() == nombreConjunto;
         });
 
+    // Si no se encuentra, lanzar excepción
     if (it == conjuntosDifusos.end()) {
-        throw std::runtime_error("Conjunto '" + nombreConjunto + "' no encontrado en variable '" + nombre + "'");
+        throw std::runtime_error("Conjunto '" + nombreConjunto + 
+                               "' no encontrado en variable '" + nombre + "'");
     }
     
+    // Retornar referencia al conjunto encontrado
     return *it;
 }
