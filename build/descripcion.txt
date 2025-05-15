@@ -15,14 +15,22 @@ Nombre: Normal
 Tipo: triangular
 Puntos: 30, 40, 50
 
+Nombre: Tibio
+Tipo: triangular
+Puntos: 45, 55, 65
+
+Nombre: Caliente
+Tipo: trapezoidal
+Puntos: 60, 70, 100, 100
+
 [Variable]
 Nombre: Presion
 Rango: 0, 10
 Unidades: Pa
 
 Nombre: Débil
-Tipo: triangular
-Puntos: 0, 0, 2
+Tipo: trapezoidal
+Puntos: 0, 0, 2, 2
 
 Nombre: Baja
 Tipo: triangular
@@ -31,3 +39,11 @@ Puntos: 1, 3, 5
 Nombre: Normal
 Tipo: triangular
 Puntos: 4, 6, 8
+
+Nombre: Fuerte
+Tipo: triangular
+Puntos: 7, 6, 9
+
+Nombre: Alta
+Tipo: trapezoidal
+Puntos: 8, 9, 10, 10

@@ -1,5 +1,5 @@
 CMakeFiles/entrada.dir/src/ValorReal.cpp.o: \
- /home/santiagovera/Proyecto3IIA/src/ValorReal.cpp \
+ /home/santiagovera/Imágenes/Proyecto3IIA/src/ValorReal.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iomanip \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -179,8 +179,8 @@ CMakeFiles/entrada.dir/src/ValorReal.cpp.o: \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/iostream \
- /home/santiagovera/Proyecto3IIA/include/ValorReal.h \
- /home/santiagovera/Proyecto3IIA/include/Variable.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ValorReal.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/Variable.h \
  /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -190,5 +190,5 @@ CMakeFiles/entrada.dir/src/ValorReal.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /home/santiagovera/Proyecto3IIA/include/ConjuntoDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ConjuntoDifuso.h \
  /usr/include/c++/11/variant /usr/include/c++/11/bits/parse_numbers.h

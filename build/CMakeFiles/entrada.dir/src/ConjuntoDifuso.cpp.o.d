@@ -1,5 +1,5 @@
 CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o: \
- /home/santiagovera/Proyecto3IIA/src/ConjuntoDifuso.cpp \
+ /home/santiagovera/Imágenes/Proyecto3IIA/src/ConjuntoDifuso.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -128,7 +128,7 @@ CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/santiagovera/Proyecto3IIA/include/ConjuntoDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ConjuntoDifuso.h \
  /usr/include/c++/11/variant /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/enable_special_members.h \

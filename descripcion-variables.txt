@@ -1,27 +1,27 @@
 [Variable]
-Nombre: Temperatura
+Nombre: Distancia
 Rango: 0, 100
-Unidades: °C
+Unidades: cm
 
 Nombre: Frío
 Tipo: trapezoidal
-Puntos: 0, 0, 10, 20
+Puntos: 20, 20, 20, 0
 
 Nombre: Fresco
 Tipo: triangular
-Puntos: 15, 25, 35
+Puntos: 15, 35, 25
 
 Nombre: Normal
 Tipo: triangular
-Puntos: 30, 40, 50
+Puntos: 20, 50, 40
 
 Nombre: Tibio
 Tipo: triangular
-Puntos: 45, 55, 65
+Puntos: 30, 55, 65
 
 Nombre: Caliente
 Tipo: trapezoidal
-Puntos: 60, 70, 100, 100
+Puntos: 60, 100, 100, 100
 
 [Variable]
 Nombre: Presion
@@ -29,8 +29,8 @@ Rango: 0, 10
 Unidades: Pa
 
 Nombre: Débil
-Tipo: triangular
-Puntos: 0, 0, 2
+Tipo: trapezoidal
+Puntos: 2, 2, 2, 0
 
 Nombre: Baja
 Tipo: triangular
@@ -42,8 +42,8 @@ Puntos: 4, 6, 8
 
 Nombre: Fuerte
 Tipo: triangular
-Puntos: 7, 6, 9
+Puntos: 7, 8, 9
 
 Nombre: Alta
-Tipo: triangular
-Puntos: 9, 10, 10
+Tipo: trapezoidal
+Puntos: 8, 10, 10, 10

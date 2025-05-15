@@ -6,6 +6,7 @@
 #include "Variable.h"
 #include "ValorReal.h"
 #include "SistemaDifuso.h"
+#include "VisualizadorSistema.h"
 
 // Función para procesar archivo de entrada y crear lista de variables
 std::vector<Variable> procesarArchivo(const std::string& nombreArchivo);
@@ -30,14 +31,24 @@ int main() {
         sistema.imprimirMatrizReglas();
     
         // 6. Evaluación de un caso concreto
-        double temp = 62; // Valor de temperatura en °C
-        double pres = 4.5; // Valor de presión en bar
+        double temp = 80; // Valor de temperatura en °C
+        double pres = 3; // Valor de presión en bar
         
         // 7. Inferencia con explicación (devuelve salida y conjuntos activados)
         auto [salida, conjuntos] = sistema.inferirConExplicacion(temp, pres);
-        
-        // 8. Obtención del último intento de desfuzzificación
-        auto obtener = sistema.ultimoIntentoDess(temp, pres);
+
+        VisualizadorSistema visualizadorSistema;
+
+        std::cout << "Sistema antes de ordenar " << std::endl;
+
+        visualizadorSistema.mostrarSistemaCompleto(sistema);
+
+        sistema.ordenarVariables();
+
+        std::cout << "Sistema despues de ordenar " << std::endl;
+
+        visualizadorSistema.mostrarSistemaCompleto(sistema);
+
         
         // 9. Obtención de las activaciones de salida
         auto activacionesSalida = sistema.inferirActivaciones(temp, pres);
@@ -59,13 +70,11 @@ int main() {
                   << " (Pertenencia: " << resultado.pertenenciaVar2 << ")\n"
                   << "Activación final: " << resultado.activacionFinal << std::endl;
 
-        // 13. Desfuzzificación por método del centroide
-        double salidaDefusificada = sistema.defusificarPorCentroide(resultado);
-        std::cout << "Salida defusificada (centroide): " << salidaDefusificada << std::endl;
+        double centroide = sistema.calcularCentroideSalida(activacionesSalida);
 
-        // 14. Desfuzzificación alternativa
-        double respuesta = sistema.desfuzzificar(activacionesSalida);
-        std::cout << "Salida defusificada (centroide) otro metodo: " << respuesta << std::endl;
+        std::cout << centroide << std::endl;
+
+        
     }
     catch (const std::exception& e) {
         // Manejo de errores

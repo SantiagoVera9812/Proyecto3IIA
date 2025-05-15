@@ -40,5 +40,9 @@ class ConjuntoDifuso {
     ConjuntoDifuso recortar(double valor) const; 
 
     double calcularCentroide() const;
+
+    bool esTrapezoidal() const;
+
+    bool esTriangular() const;
       
 };

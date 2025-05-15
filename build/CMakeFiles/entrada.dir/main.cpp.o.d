@@ -1,6 +1,6 @@
 CMakeFiles/entrada.dir/main.cpp.o: \
- /home/santiagovera/Proyecto3IIA/main.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/11/iostream \
+ /home/santiagovera/Imágenes/Proyecto3IIA/main.cpp \
+ /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -151,7 +151,7 @@ CMakeFiles/entrada.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc \
- /home/santiagovera/Proyecto3IIA/include/ConjuntoDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ConjuntoDifuso.h \
  /usr/include/c++/11/variant /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/enable_special_members.h \
@@ -162,7 +162,7 @@ CMakeFiles/entrada.dir/main.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/santiagovera/Proyecto3IIA/include/Variable.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/Variable.h \
  /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -172,8 +172,8 @@ CMakeFiles/entrada.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /home/santiagovera/Proyecto3IIA/include/ValorReal.h \
- /home/santiagovera/Proyecto3IIA/include/SistemaDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ValorReal.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/SistemaDifuso.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
@@ -213,4 +213,13 @@ CMakeFiles/entrada.dir/main.cpp.o: \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/pstl/execution_defs.h
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/VisualizadorSistema.h \
+ /usr/include/c++/11/iomanip /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/locale_facets_nonio.h /usr/include/c++/11/ctime \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/11/bits/locale_conv.h \
+ /usr/include/c++/11/bits/unique_ptr.h \
+ /usr/include/c++/11/bits/quoted_string.h

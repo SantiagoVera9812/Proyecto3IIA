@@ -60,4 +60,13 @@ class SistemaDifuso {
         double desfuzzificar(const std::map<std::string, double>& activacionesSalida);
 
         ResultadoInferencia ultimoIntentoDess(double valorVar1, double valorVar2);
+
+        void ordenarVariables();
+
+        const Variable& obtenerVariableSalida() const;
+
+        const std::vector<Variable>& obtenerVariablesEntrada() const;
+
+        double calcularCentroideSalida(const std::map<std::string, double>& activaciones);
+
     };

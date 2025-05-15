@@ -122,3 +122,13 @@ void ConjuntoDifuso::setNombre(const std::string& newNombre) {
     }
     this->nombre = newNombre;
 }
+
+bool ConjuntoDifuso::esTrapezoidal() const{
+    return tipo == TipoDifuso::TRAPEZOIDAL;
+}
+
+bool ConjuntoDifuso::esTriangular() const{
+    return tipo == TipoDifuso::TRIANGULAR;
+}
+
+

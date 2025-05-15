@@ -1,5 +1,5 @@
 CMakeFiles/entrada.dir/src/Variable.cpp.o: \
- /home/santiagovera/Proyecto3IIA/src/Variable.cpp \
+ /home/santiagovera/Imágenes/Proyecto3IIA/src/Variable.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/stdexcept \
  /usr/include/c++/11/exception \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -150,7 +150,7 @@ CMakeFiles/entrada.dir/src/Variable.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/santiagovera/Proyecto3IIA/include/Variable.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/Variable.h \
  /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -160,7 +160,7 @@ CMakeFiles/entrada.dir/src/Variable.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /home/santiagovera/Proyecto3IIA/include/ConjuntoDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ConjuntoDifuso.h \
  /usr/include/c++/11/variant /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/enable_special_members.h \

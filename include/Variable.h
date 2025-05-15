@@ -26,7 +26,10 @@ class Variable {
         int maximo = INT_MAX,
         const std::string& unidad = "",
         const std::vector<ConjuntoDifuso>& conjuntos = {});
-        void insertarConjuntoDifuso(const ConjuntoDifuso& conjunto);
+
+    void insertarConjuntoDifuso(const ConjuntoDifuso& conjunto);
+
+    void ordenarConjuntoDifuso();
 
     void imprimir() const;
 

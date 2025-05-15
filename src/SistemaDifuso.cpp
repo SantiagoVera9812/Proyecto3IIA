@@ -469,3 +469,53 @@ bool SistemaDifuso::cargarReglasDesdeArchivo(const std::string& nombreArchivo){
               << " columnas de reglas.\n";
     return true;
 }
+
+void SistemaDifuso::ordenarVariables(){
+
+    for(auto& variable: variablesEntrada){
+        variable.ordenarConjuntoDifuso();
+    }
+}
+
+const Variable& SistemaDifuso::obtenerVariableSalida() const {
+    return variableSalida;
+}
+
+const std::vector<Variable>& SistemaDifuso::obtenerVariablesEntrada() const {
+    return variablesEntrada;
+}
+
+double SistemaDifuso::calcularCentroideSalida(const std::map<std::string, double>& activaciones) {
+    if (activaciones.empty()) return 0.0; // No hay activaciones
+
+    if (activaciones.empty()) {
+        return 0.0; // No hay activaciones
+    }
+
+    // Caso especial: solo una activación
+    if (activaciones.size() == 1) {
+        return activaciones.begin()->second; // Devuelve el valor de la única activación
+    }
+
+    // Paso 1: Asignar posiciones a los conjuntos de salida (basado en sus nombres o reglas)
+    std::map<std::string, double> posicionesConjuntos;
+    double posicion = 0.0;
+    const double paso = 1.0 / activaciones.size(); // Distribución uniforme en [0,1]
+
+    for (const auto& [nombre, _] : activaciones) {
+        posicionesConjuntos[nombre] = posicion;
+        posicion += paso;
+    }
+
+    // Paso 2: Calcular centroide como promedio ponderado
+    double numerador = 0.0;
+    double denominador = 0.0;
+
+    for (const auto& [nombre, activacion] : activaciones) {
+        double x = posicionesConjuntos[nombre];
+        numerador += x * activacion;
+        denominador += activacion;
+    }
+
+    return (denominador == 0.0) ? 0.0 : (numerador / denominador);
+}

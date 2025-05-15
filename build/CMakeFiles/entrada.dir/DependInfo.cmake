@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/santiagovera/Proyecto3IIA/main.cpp" "CMakeFiles/entrada.dir/main.cpp.o" "gcc" "CMakeFiles/entrada.dir/main.cpp.o.d"
-  "/home/santiagovera/Proyecto3IIA/src/ConjuntoDifuso.cpp" "CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o.d"
-  "/home/santiagovera/Proyecto3IIA/src/SistemaDifuso.cpp" "CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o.d"
-  "/home/santiagovera/Proyecto3IIA/src/ValorReal.cpp" "CMakeFiles/entrada.dir/src/ValorReal.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/ValorReal.cpp.o.d"
-  "/home/santiagovera/Proyecto3IIA/src/Variable.cpp" "CMakeFiles/entrada.dir/src/Variable.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/Variable.cpp.o.d"
+  "/home/santiagovera/Imágenes/Proyecto3IIA/main.cpp" "CMakeFiles/entrada.dir/main.cpp.o" "gcc" "CMakeFiles/entrada.dir/main.cpp.o.d"
+  "/home/santiagovera/Imágenes/Proyecto3IIA/src/ConjuntoDifuso.cpp" "CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/ConjuntoDifuso.cpp.o.d"
+  "/home/santiagovera/Imágenes/Proyecto3IIA/src/SistemaDifuso.cpp" "CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o.d"
+  "/home/santiagovera/Imágenes/Proyecto3IIA/src/ValorReal.cpp" "CMakeFiles/entrada.dir/src/ValorReal.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/ValorReal.cpp.o.d"
+  "/home/santiagovera/Imágenes/Proyecto3IIA/src/Variable.cpp" "CMakeFiles/entrada.dir/src/Variable.cpp.o" "gcc" "CMakeFiles/entrada.dir/src/Variable.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

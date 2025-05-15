@@ -1,5 +1,5 @@
 CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o: \
- /home/santiagovera/Proyecto3IIA/src/SistemaDifuso.cpp \
+ /home/santiagovera/Imágenes/Proyecto3IIA/src/SistemaDifuso.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -199,8 +199,8 @@ CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc \
- /home/santiagovera/Proyecto3IIA/include/SistemaDifuso.h \
- /home/santiagovera/Proyecto3IIA/include/Variable.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/SistemaDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/Variable.h \
  /usr/include/c++/11/climits \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -210,7 +210,7 @@ CMakeFiles/entrada.dir/src/SistemaDifuso.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /home/santiagovera/Proyecto3IIA/include/ConjuntoDifuso.h \
+ /home/santiagovera/Imágenes/Proyecto3IIA/include/ConjuntoDifuso.h \
  /usr/include/c++/11/variant /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/10/iomanip /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h /usr/include/c++/11/ctime \

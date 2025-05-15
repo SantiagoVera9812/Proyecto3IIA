@@ -103,3 +103,26 @@ ConjuntoDifuso& Variable::obtenerConjuntoPorNombre(const std::string& nombreConj
     // Retornar referencia al conjunto encontrado
     return *it;
 }
+
+void Variable::ordenarConjuntoDifuso() {
+    std::sort(conjuntosDifusos.begin(), conjuntosDifusos.end(),
+        [](const ConjuntoDifuso& a, const ConjuntoDifuso& b) {
+            bool aIsTrapezoid = a.esTrapezoidal();
+            bool bIsTrapezoid = b.esTrapezoidal();
+
+            if (aIsTrapezoid == bIsTrapezoid) {
+                return false;
+            }
+        
+            return aIsTrapezoid;
+        });
+
+    auto it = std::stable_partition(conjuntosDifusos.begin(), conjuntosDifusos.end(),
+        [](const ConjuntoDifuso& c) { return c.esTrapezoidal(); });
+
+    size_t numTrapezoidal = std::distance(conjuntosDifusos.begin(), it);
+    if (numTrapezoidal > 1) {
+        size_t half = numTrapezoidal / 2;
+        std::rotate(conjuntosDifusos.begin() + half, it, conjuntosDifusos.end());
+    }
+}
